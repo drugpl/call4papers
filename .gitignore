@@ -3,6 +3,6 @@ db/*.sqlite3
 log/
 tmp/
 bin/
+coverage/
 .sass-cache/
-config/initializers/secret_token.rb
 config/database.yml
