@@ -9,6 +9,7 @@ gem 'omniauth-github'
 gem 'omniauth-twitter'
 gem 'pg'
 gem 'redcarpet'
+gem 'thin'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.4'
