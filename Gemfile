@@ -21,6 +21,7 @@ gem 'jquery-rails'
 
 group :production do
   gem 'unicorn'
+  gem 'shelly-dependencies'
 end
 
 group :development do
