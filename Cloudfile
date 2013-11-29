@@ -4,6 +4,8 @@ call4papers:
   monitoring_email: grzegorz.wilczynski@wrocloverb.com
   domains:
     - call4papers.shellyapp.com
+    - c4p.wrocloveb.com
+    - cfp.wrocloverb.com.
   servers:
     app1:
       size: large
