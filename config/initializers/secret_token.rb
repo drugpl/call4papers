@@ -1,1 +1,1 @@
-Cfp::Application.config.secret_token = '9ef810cd4d4276ef0a3787800461ba1ba040845b8f97fd463deee6a83fcf965958e521f89bbe6e9d6a6d24e274eb71e9b1e087676e1a46cf23b3434bb165fe47'
+Cfp::Application.config.secret_token = ENV['SECRET_TOKEN']
