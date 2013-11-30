@@ -61,6 +61,9 @@ GEM
       orm_adapter (~> 0.1)
       railties (~> 3.1)
       warden (~> 1.2.1)
+    dotenv (0.9.0)
+    dotenv-rails (0.9.0)
+      dotenv (= 0.9.0)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
@@ -203,6 +206,7 @@ DEPENDENCIES
   debugger
   debugger-linecache (>= 1.2.0)
   devise
+  dotenv-rails
   jquery-rails
   omniauth
   omniauth-github
