@@ -3,7 +3,7 @@ wrocloverb:
   environment: production # RAILS_ENV
   monitoring_email: grzegorz.wilczynski@wrocloverb.com
   domains:
-    - call4papers.shellyapp.com
+    - wrocloverb.shellyapp.com
     - c4p.wrocloverb.com
     - cfp.wrocloverb.com
   servers:
