@@ -1,4 +1,4 @@
-call4papers:
+wrocloverb:
   ruby_version: 1.9.3
   environment: production # RAILS_ENV
   monitoring_email: grzegorz.wilczynski@wrocloverb.com
@@ -10,12 +10,5 @@ call4papers:
     app1:
       size: large
       thin: 4
-      # delayed_job: 1
-      # sidekiq: 1
-      # clockwork: on
-      # whenever: on
-      # elasticsearch: on
       databases:
         - postgresql
-        # - mongodb
-        # - redis

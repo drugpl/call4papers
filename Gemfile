@@ -28,8 +28,6 @@ end
 
 group :development do
   gem 'capistrano'
-  gem 'debugger'
-  gem 'debugger-linecache', '>= 1.2.0'
 end
 
 group :test do
