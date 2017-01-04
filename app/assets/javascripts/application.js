@@ -9,4 +9,4 @@
 //= require bootstrap.min
 //= require_tree .
 
-$(".alert").alert();
+// $(".alert").alert();
