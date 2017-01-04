@@ -9,7 +9,6 @@ gem 'omniauth-github'
 gem 'omniauth-twitter'
 gem 'pg'
 gem 'redcarpet'
-gem 'thin'
 gem "dotenv-rails"
 
 group :assets do
@@ -20,15 +19,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
-group :production do
-  gem 'unicorn'
-  gem 'shelly-dependencies'
-end
-
-group :development do
-  gem 'capistrano'
-end
 
 group :test do
   gem 'turn', :require => false
