@@ -23,7 +23,7 @@ class PapersController < ApplicationController
 
     if @paper.save
       notify_excited_organizers
-      redirect_to @paper, notice: "Great job! You've successfully propsed a paper for wroc_love.rb conference."
+      redirect_to @paper, notice: "Great job! You've successfully propsed a paper for wroclove.rb"
     else
       render :new
     end
@@ -36,7 +36,7 @@ class PapersController < ApplicationController
       redirect_to @paper, notice: "Well done! Your proposal has been updated."
     else
       render :edit
-    end
+    en
   end
 
   def destroy
