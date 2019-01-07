@@ -36,7 +36,7 @@ class PapersController < ApplicationController
       redirect_to @paper, notice: "Well done! Your proposal has been updated."
     else
       render :edit
-    en
+    end
   end
 
   def destroy
