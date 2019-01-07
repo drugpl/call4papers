@@ -1,5 +1,5 @@
 class Paper < ActiveRecord::Base
-  set_primary_key :id
+  self.primary_key = :id
 
   has_many :upvotes
   has_many :voters, through: :upvotes, source: :user

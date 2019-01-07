@@ -1,0 +1,21 @@
+%h1 All papers
+.papers
+  - if @papers.empty?
+    No submissions yet.
+  - else
+    %table.table
+      %tr
+        %th Title
+        %th Created at
+        %th Updated at
+        %th Upvotes
+        %th Author
+      - @papers.each do |paper|
+        %tr{class: "#{'selected' if paper.selected?}"}
+          %td.title= link_to truncate(paper.title, length: 60), paper
+          %td= paper.created_at.strftime('%b %d, %Y')
+          %td= paper.updated_at.strftime('%b %d, %Y') if paper.updated?
+          %td= paper.upvote_count unless paper.upvote_count.to_i.zero? || paper.selected?
+          %td= paper.user_name
+= link_to "Users", admin_users_path, class: 'btn btn-success'
+= link_to "Papers", admin_papers_path, class: 'btn btn-success'

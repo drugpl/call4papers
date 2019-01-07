@@ -1,12 +1,6 @@
-/*
- * This is a manifest file that'll automatically include all the stylesheets available in this directory
- * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
- * the top of the compiled file, but it's generally better to create a new file per style scope.
- *= require bootstrap.min.css
- *= require auth-buttons
- *= require_self
- *= require papers.css.scss
- */
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+@import "papers.css.scss";
 
 body {
   padding-top: 20px;
@@ -17,14 +11,6 @@ body {
 h1, h2, h3 {
   text-transform: uppercase;
   font-family: 'Lato', sans-serif;
-}
-
-a.root:hover {
-  text-decoration: none;
-}
-
-a.root:hover h3 {
-  color: #08c;
 }
 
 .container-narrow {

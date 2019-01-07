@@ -1,0 +1,19 @@
+%h1 My papers
+.papers
+  - if @papers.empty?
+    No submissions yet? Create one now and give us a solid reason to choose you!
+  - else
+    %table.table
+      %tr
+        %th Title
+        %th Created at
+        %th
+      - @papers.each do |paper|
+        %tr
+          %td.title= paper.title
+          %td= paper.created_at.strftime('%B %d, %Y')
+          %td
+            = link_to 'show', paper
+            = link_to 'edit', edit_paper_path(paper)
+            = link_to 'destroy', paper, confirm: 'Are you sure?', method: :delete
+= link_to 'New proposal', new_paper_path, class: 'btn btn-success'
