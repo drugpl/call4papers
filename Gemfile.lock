@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     actionmailer (3.2.22)
       actionpack (= 3.2.22)
@@ -14,9 +14,6 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.2.1)
-    active_schema (0.1.0)
-      activerecord
-      foreigner
     activemodel (3.2.22)
       activesupport (= 3.2.22)
       builder (~> 3.0.0)
@@ -56,8 +53,6 @@ GEM
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
     ffi (1.9.25)
-    foreigner (1.6.0)
-      activerecord (>= 3.0.0)
     hashie (2.0.5)
     hike (1.2.3)
     httpauth (0.2.0)
@@ -129,7 +124,7 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     rdoc (3.9.5)
-    redcarpet (3.0.0)
+    redcarpet (3.4.0)
     sass (3.7.2)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -167,7 +162,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_schema
   coffee-rails (~> 3.2)
   devise
   dotenv-rails

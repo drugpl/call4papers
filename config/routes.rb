@@ -1,4 +1,6 @@
 Cfp::Application.routes.draw do
+  root to: "home#show"
+
   get "home/show"
 
   match '/auth/:provider/callback' => 'authentications#create'
@@ -14,6 +16,8 @@ Cfp::Application.routes.draw do
   resources :authentications
 
   namespace :admin do
+    root to: "papers#index"
+
     resources :papers do
       member do
         post :upvote
@@ -21,7 +25,6 @@ Cfp::Application.routes.draw do
       end
     end
     resources :users
-    root to: "papers#index"
+
   end
-  root to: "home#show"
 end
