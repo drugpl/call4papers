@@ -3,10 +3,10 @@ Cfp::Application.routes.draw do
 
   match '/auth/:provider/callback' => 'authentications#create'
 
-  devise_for :users, :controllers => {
-    :registrations => 'r  egistrations',
-    :sessions      => 'sessions',
-    :passwords     => 'passwords'
+  devise_for :users, controllers: {
+    registrations: 'registrations',
+    sessions: 'sessions',
+    passwords: 'passwords'
   }
 
   resource :profile
@@ -21,7 +21,7 @@ Cfp::Application.routes.draw do
       end
     end
     resources :users
-    root :to => "papers#index"
+    root to: "papers#index"
   end
-  root :to => "home#show"
+  root to: "home#show"
 end

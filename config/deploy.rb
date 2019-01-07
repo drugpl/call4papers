@@ -7,7 +7,7 @@ set :deploy_to, "/srv/#{application}"
 set :deploy_via, :remote_cache
 set :repository, "git@github.com:drugpl/call4papers.git"
 set :scm, :git
-set :ssh_options, {:forward_agent => true}
+set :ssh_options, {forward_agent: true}
 set :keep_releases, 5
 set :bundle_without, %w(test development)
 set :use_sudo, false
@@ -19,26 +19,26 @@ default_run_options[:pty] = true
 
 role :web, "cfp.wrocloverb.com"
 role :app, "cfp.wrocloverb.com"
-role :db,  "cfp.wrocloverb.com", :primary => true
+role :db,  "cfp.wrocloverb.com", primary: true
 
 namespace :deploy do
-  task :start, :roles => :app, :except => { :no_release => true } do
+  task :start, roles: :app, except: { no_release: true } do
     run "cd #{current_path} && #{try_sudo} bundle exec #{unicorn_binary} -c #{unicorn_config} -E #{rails_env} -D"
   end
 
-  task :stop, :roles => :app, :except => { :no_release => true } do
+  task :stop, roles: :app, except: { no_release: true } do
     run "#{try_sudo} kill `cat #{unicorn_pid}`"
   end
 
-  task :graceful_stop, :roles => :app, :except => { :no_release => true } do
+  task :graceful_stop, roles: :app, except: { no_release: true } do
     run "#{try_sudo} kill -s QUIT `cat #{unicorn_pid}`"
   end
 
-  task :reload, :roles => :app, :except => { :no_release => true } do
+  task :reload, roles: :app, except: { no_release: true } do
     run "#{try_sudo} kill -s USR2 `cat #{unicorn_pid}`"
   end
 
-  task :restart, :roles => :app, :except => { :no_release => true } do
+  task :restart, roles: :app, except: { no_release: true } do
     stop
     start
   end

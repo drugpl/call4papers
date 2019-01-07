@@ -4,7 +4,7 @@ class Paper < ActiveRecord::Base
   has_many :upvotes
   has_many :voters, through: :upvotes, source: :user
 
-  before_validation :on => :create do
+  before_validation on: :create do
     self.id = SecureRandom.hex(16)
   end
 
