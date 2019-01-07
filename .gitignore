@@ -6,3 +6,4 @@ bin/
 .sass-cache/
 config/database.yml
 .env.development
+.idea/
