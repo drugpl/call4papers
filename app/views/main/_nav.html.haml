@@ -1,7 +1,33 @@
-%ul.nav.nav-pills.pull-right
-  - if current_user
-    - if current_user.staff?
-      %li= link_to 'Admin', admin_root_path
-    %li= link_to 'My Papers', papers_path
-    %li= link_to 'Profile', profile_path
-    %li= link_to 'Logout', destroy_user_session_path, method: :delete
+-#.navbar.navbar-expand-lg.navbar-light.bg-light
+-#  %a.navbar-brand(href="#") Navbar
+-#  - if current_user
+-#    - if current_user.staff?
+-#      %li= link_to 'Admin', admin_root_path
+-#    %li= link_to 'My Papers', papers_path
+-#    %li= link_to 'Profile', profile_path
+-#    %li= link_to 'Logout', destroy_user_session_path, method: :delete
+
+-#%ul.nav.nav-pills.pull-right
+-#  - if current_user
+-#    - if current_user.staff?
+-#      %li= link_to 'Admin', admin_root_path
+-#    %li= link_to 'My Papers', papers_path
+-#    %li= link_to 'Profile', profile_path
+-#    %li= link_to 'Logout', destroy_user_session_path, method: :delete
+
+
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  %a.navbar-brand{href: "#"} WROCLOVE.RB 2019 CALL FOR PAPERS
+  %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarNav.collapse.navbar-collapse
+    %ul.navbar-nav.ml-auto
+      - if current_user && current_user.staff?
+        %li.nav-item
+          = link_to 'Admin', admin_root_path, class: 'nav-link'
+      %li.nav-item
+        = link_to 'My Papers', papers_path, class: 'nav-link'
+      %li.nav-item
+        = link_to 'Profile', profile_path, class: 'nav-link'
+      %li.nav-item
+        = link_to 'Logout', destroy_user_session_path, class: 'nav-link'
