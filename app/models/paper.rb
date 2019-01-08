@@ -12,8 +12,6 @@ class Paper < ApplicationRecord
 
   validates_presence_of :id, :title, :private_description
 
-  # attr_accessible :title, :public_description, :private_description
-
   scope :with_upvotes, -> { select("papers.id, papers.title, papers.user_id, papers.created_at, papers.updated_at, papers.selected, COUNT(upvotes.id) AS upvote_count").
                             joins("LEFT OUTER JOIN upvotes ON upvotes.paper_id = papers.id").
                             group("papers.id, papers.title, papers.user_id, papers.created_at, papers.updated_at, papers.selected").

@@ -1,6 +1,6 @@
 %h1 Edit profile and bio
 .profile
-  = simple_form_for @user, :url => profile_path do |f|
+  = simple_form_for current_user, :url => profile_path do |f|
     = f.error_notification
     .inputs
       = f.input :name

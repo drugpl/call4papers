@@ -3,6 +3,10 @@ class Admin::PapersController < Admin::AdminController
     @papers = Paper.with_upvotes.all
   end
 
+  def show
+
+  end
+
   def upvote
     paper = Paper.find(params[:id])
     current_user.give_upvote!(paper)

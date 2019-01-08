@@ -1,13 +1,12 @@
 class PapersController < ApplicationController
   skip_before_action :authenticate, only: :show
+  before_action :set_paper, only: [:show, :edit, :update, :destroy]
 
   def index
     @papers = current_user.papers.order("created_at DESC").all
   end
 
   def show
-    @paper = Paper.find(params[:id])
-    @user  = @paper.user
   end
 
   def new
@@ -15,11 +14,10 @@ class PapersController < ApplicationController
   end
 
   def edit
-    @paper = current_user.papers.find(params[:id])
   end
 
   def create
-    @paper = current_user.papers.new(params[:paper])
+    @paper = current_user.papers.new(paper_params)
 
     if @paper.save
       notify_excited_organizers
@@ -30,9 +28,7 @@ class PapersController < ApplicationController
   end
 
   def update
-    @paper = current_user.papers.find(params[:id])
-
-    if @paper.update_attributes(params[:paper])
+    if @paper.update_attributes(paper_params)
       redirect_to @paper, notice: "Well done! Your proposal has been updated."
     else
       render :edit
@@ -40,7 +36,6 @@ class PapersController < ApplicationController
   end
 
   def destroy
-    @paper = current_user.papers.find(params[:id])
     @paper.destroy
 
     redirect_to papers_url
@@ -50,5 +45,13 @@ class PapersController < ApplicationController
 
   def notify_excited_organizers
     # PapersMailer.created(@paper.title, paper_url(@paper)).deliver
+  end
+
+  def paper_params
+    params.require(:paper).permit(:title, :public_description, :private_description)
+  end
+
+  def set_paper
+    @paper = current_user.papers.find(params[:id])
   end
 end

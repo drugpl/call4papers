@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :authentications
 
   namespace :admin do
-    root to: 'papers#index'
+    root to: redirect('admin/papers')
 
     resources :papers do
       member do
