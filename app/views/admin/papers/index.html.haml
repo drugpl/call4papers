@@ -12,7 +12,7 @@
         %th Author
       - @papers.each do |paper|
         %tr{class: "#{'selected' if paper.selected?}"}
-          %td.title= link_to truncate(paper.title, length: 60), paper
+          %td.title= link_to truncate(paper.title, length: 60), admin_paper_path(paper)
           %td= paper.created_at.strftime('%b %d, %Y')
           %td= paper.updated_at.strftime('%b %d, %Y') if paper.updated?
           %td= paper.upvote_count unless paper.upvote_count.to_i.zero? || paper.selected?

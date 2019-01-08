@@ -4,28 +4,25 @@
   - if @paper.public_description.present?
     %hr/
     = markdown @paper.public_description
-- if current_user
-  - if current_user.can_edit_paper?(@paper)
-    = link_to 'Edit', edit_paper_path(@paper), class: 'btn btn-success'
-  - if current_user.staff?
-    = vote_button(@paper)
-    = link_to "Back to admin papers", admin_papers_path, class: 'btn btn-primary'
-    %hr/
-    %h2= @user.name
-    %table.table
-      %tr
-        %th Avatar
-        %th Name
-        %th Email
-        %th GitHub
-        %th Twitter
-      %tr
-        %td
-          = image_tag(avatar_url(@user, 64))
-        %td= @user.name
-        %td= @user.email
-        %td
-          = github_link(@user.github_handle) if @user.connected_with_github?
-        %td
-          = twitter_link(@user.twitter_handle) if @user.connected_with_twitter?
-    = markdown(@user.bio) if @user.has_bio?
+
+= vote_button(@paper)
+= link_to "Back to admin papers", admin_papers_path, class: 'btn btn-primary'
+%hr/
+%h2= @user.name
+%table.table
+  %tr
+    %th Avatar
+    %th Name
+    %th Email
+    %th GitHub
+    %th Twitter
+  %tr
+    %td
+      = image_tag(avatar_url(@user, 64))
+    %td= @user.name
+    %td= @user.email
+    %td
+      = github_link(@user.github_handle) if @user.connected_with_github?
+    %td
+      = twitter_link(@user.twitter_handle) if @user.connected_with_twitter?
+= markdown(@user.bio) if @user.has_bio?

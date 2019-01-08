@@ -45,10 +45,6 @@ class User < ApplicationRecord
     authentications.where(provider: 'github').first
   end
 
-  def can_edit_paper?(paper)
-    papers.exists?(paper)
-  end
-
   def has_bio?
     ! bio.blank?
   end
