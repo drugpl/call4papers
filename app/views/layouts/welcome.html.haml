@@ -3,15 +3,12 @@
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Call for Papers | wroclove.rb 2019
-    = javascript_include_tag "jquery"
-    = javascript_include_tag "jquery_ujs"
-    = javascript_include_tag "bootstrap.min"
-    = stylesheet_link_tag "bootstrap.min.css"
-    = stylesheet_link_tag "auth-buttons"
-    = stylesheet_link_tag "application"
-    = stylesheet_link_tag "papers"
-    %link{href: "http://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:400,700", rel: "stylesheet", type: "text/css"}/
     = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+    %link{href: "http://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:400,700", rel: "stylesheet", type: "text/css"}/
   %body
     #fb-root
     :javascript
@@ -62,9 +59,7 @@
         = yield
         .socialmedia
           .wrapper
-            .fb-like{"data-href" => "http://cfp.wrocloverb.com", "data-layout" => "button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "450"}
+            .fb-like{"data-href" => "https://wrocloverb.com", "data-layout" => "button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "450"}
           .wrapper
-            %a.twitter-share-button{"data-related" => "wrocloverb", "data-text" => "wroclove.rb call for papers ends on Jan 31st 2019. Submit yours now!", "data-url" => "http://cfp.wrocloverb.com", "data-via" => "wrocloverb", href: "https://twitter.com/share"} Tweet
-          .wrapper
-            .g-plusone{"data-href" => "http://cfp.wrocloverb.com", "data-size" => "medium"}
+            %a.twitter-share-button{"data-related" => "wrocloverb", "data-text" => "wroclove.rb call for papers ends on Jan 31st 2019. Submit yours now!", "data-url" => "https://wrocloverb.com", "data-via" => "wrocloverb", href: "https://twitter.com/share"} Tweet
       = render "main/footer"

@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  skip_before_filter :authenticate
+  skip_before_action :authenticate
   layout 'welcome'
 
   def create

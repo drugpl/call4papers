@@ -3,14 +3,11 @@
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Call for Papers | wroclove.rb 2019
-    = javascript_include_tag "jquery"
-    = javascript_include_tag "jquery_ujs"
-    = javascript_include_tag "bootstrap.min"
-    = stylesheet_link_tag "bootstrap.min.css"
-    = stylesheet_link_tag "auth-buttons"
-    = stylesheet_link_tag "application"
-    = stylesheet_link_tag "papers"
     = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
     %link{href: "http://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:400,700", rel: "stylesheet", type: "text/css"}/
   %body
     .container.container-wide

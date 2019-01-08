@@ -1,6 +1,12 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+@import "font-awesome";
 @import "papers.css.scss";
+@import "bootstrap-social.css";
+
+.navbar-inner {
+  background: transparent;
+}
 
 body {
   padding-top: 20px;
@@ -44,9 +50,9 @@ h1, h2, h3 {
   margin: 30px 0;
 }
 
-.jumbotron .auth {
-  margin: 50px 0;
-}
+//.jumbotron .auth {
+//  margin: 50px 0;
+//}
 
 .jumbotron .hint a {
   font-weight: bold;
@@ -56,11 +62,11 @@ h1, h2, h3 {
   text-align: left;
 }
 
-.btn {
-  font-size: 18px;
-  padding: 8px 18px;
-  border-radius: 2px;
-}
+//.btn {
+//  font-size: 18px;
+//  padding: 8px 18px;
+//  border-radius: 2px;
+//}
 
 .papers, .profile, .bio, .rules, .profiles {
   margin: 50px 0;

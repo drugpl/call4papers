@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   has_many :authentications
   has_many :papers
   has_many :upvotes
@@ -7,13 +7,13 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  attr_accessible :name, :email, :bio, :website_url, :password, :password_confirmation, :remember_me
+  # attr_accessible :name, :email, :bio, :website_url, :password, :password_confirmation, :remember_me
 
   validates :name, presence: true
   validates :email, presence: true
 
-  scope :staff,        where(staff: true)
-  scope :contributor,  where(staff: nil)
+  scope :staff, -> { where(staff: true) }
+  scope :contributor, -> { where(staff: nil) }
 
   def apply_omniauth(omniauth)
     provider, uid, info = omniauth.values_at('provider', 'uid', 'info')

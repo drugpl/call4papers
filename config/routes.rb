@@ -1,9 +1,9 @@
-Cfp::Application.routes.draw do
-  root to: "home#show"
+Rails.application.routes.draw do
+  root to: 'home#show'
 
-  get "home/show"
+  get 'home/show'
 
-  match '/auth/:provider/callback' => 'authentications#create'
+  get '/auth/:provider/callback', to: 'authentications#create'
 
   devise_for :users, controllers: {
     registrations: 'registrations',
@@ -16,7 +16,7 @@ Cfp::Application.routes.draw do
   resources :authentications
 
   namespace :admin do
-    root to: "papers#index"
+    root to: 'papers#index'
 
     resources :papers do
       member do
@@ -25,6 +25,5 @@ Cfp::Application.routes.draw do
       end
     end
     resources :users
-
   end
 end
