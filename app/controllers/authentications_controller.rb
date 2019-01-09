@@ -3,7 +3,7 @@ class AuthenticationsController < ApplicationController
   layout 'welcome'
 
   def index
-    @paper_count = Paper.count
+    @paper_count = Paper.for_current_edition.count
     @user_count  = User.count
   end
 

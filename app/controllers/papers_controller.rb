@@ -3,7 +3,7 @@ class PapersController < ApplicationController
   before_action :set_paper, only: [:show, :edit, :update, :destroy]
 
   def index
-    @papers = current_user.papers.order("created_at DESC").all
+    @papers = current_user.papers.for_current_edition.order("created_at DESC")
   end
 
   def show

@@ -1,6 +1,6 @@
 class Admin::PapersController < Admin::AdminController
   def index
-    @papers = Paper.with_upvotes.all
+    @papers = Paper.for_current_edition.with_upvotes
   end
 
   def show
