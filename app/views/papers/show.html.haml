@@ -1,0 +1,8 @@
+%h1= @paper.title
+.papers
+  = markdown @paper.private_description
+  - if @paper.public_description.present?
+    %hr/
+    = markdown @paper.public_description
+
+= link_to 'Edit', edit_paper_path(@paper), class: 'btn btn-success'

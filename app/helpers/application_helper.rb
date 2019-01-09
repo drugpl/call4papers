@@ -1,23 +1,23 @@
 module ApplicationHelper
   def markdown(text)
-    renderer = Redcarpet::Render::HTML.new(:hard_wrap => true)
-    markdown = Redcarpet::Markdown.new(renderer, :autolink => true, :space_after_headers => true, :fenced_code_blocks => true, :no_intra_emphasis => true)
+    renderer = Redcarpet::Render::HTML.new(hard_wrap: true)
+    markdown = Redcarpet::Markdown.new(renderer, autolink: true, space_after_headers: true, fenced_code_blocks: true, no_intra_emphasis: true)
     markdown.render(h(text)).html_safe
   end
 
   def twitter_link(handle)
     handle = h(handle.to_s.sub(/\A@/, ''))
-    link_to(truncate(handle, length: 20), "http://twitter.com/#{handle}") unless handle.blank?
+    link_to(truncate(handle, length: 20), "https://twitter.com/#{handle}") unless handle.blank?
   end
 
   def github_link(handle)
     handle = h(handle.to_s.sub(/\A@/, ''))
-    link_to(truncate(handle, length: 20), "http://github.com/#{handle}") unless handle.blank?
+    link_to(truncate(handle, length: 20), "https://github.com/#{handle}") unless handle.blank?
   end
 
   def gravatar_avatar_url(user, size)
     gravatar_id = Digest::MD5::hexdigest(user.email).downcase
-    "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
+    "https://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
   end
 
   def twitter_avatar_url(handle)

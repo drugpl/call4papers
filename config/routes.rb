@@ -1,19 +1,23 @@
-Cfp::Application.routes.draw do
-  get "home/show"
+Rails.application.routes.draw do
+  root to: 'home#show'
 
-  match '/auth/:provider/callback' => 'authentications#create'
+  get 'home/show'
 
-  devise_for :users, :controllers => {
-    :registrations => 'registrations',
-    :sessions => 'sessions',
-    :passwords => 'passwords'
+  get '/auth/:provider/callback', to: 'authentications#create'
+
+  devise_for :users, controllers: {
+    registrations: 'registrations',
+    sessions: 'sessions',
+    passwords: 'passwords'
   }
 
-  resource   :profile
-  resources  :papers
-  resources  :authentications
+  resource :profile
+  resources :papers
+  resources :authentications
 
   namespace :admin do
+    root to: redirect('admin/papers')
+
     resources :papers do
       member do
         post :upvote
@@ -21,7 +25,5 @@ Cfp::Application.routes.draw do
       end
     end
     resources :users
-    root :to => "papers#index"
   end
-  root :to => "home#show"
 end

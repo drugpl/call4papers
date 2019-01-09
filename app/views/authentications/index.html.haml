@@ -1,0 +1,13 @@
+.auth
+  %a.btn.btn-lg.btn-social.btn-github{href: "/auth/github"}
+    %span.fa.fa-github
+    Sign in with GitHub
+  %a.btn.btn-lg.btn-social.btn-twitter{href: "/auth/twitter"}
+    %span.fa.fa-twitter
+    Sign in with Twitter
+
+%p.hint
+  You can also
+  \#{link_to 'sign up', new_registration_path(:user)}
+  or
+  \#{link_to 'sign in with password', new_session_path(:user)}.

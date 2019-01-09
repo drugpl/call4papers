@@ -1,0 +1,24 @@
+%h1 All users
+.profiles
+  %table.table
+    %tr
+      %th Avatar
+      %th Name
+      %th Email
+      %th GitHub
+      %th Twitter
+      %th Bio
+      %th Proposal
+      %th Created at
+    - for user in @users
+      %tr
+        %td= image_tag(avatar_url(user, 32))
+        %td= user.name
+        %td.muted= user.email
+        %td= github_link(user.github_handle)
+        %td= twitter_link(user.twitter_handle)
+        %td= "✔" if user.has_bio?
+        %td= "✔" if user.has_proposal?
+        %td= user.created_at.strftime("%B %d, %Y")
+= link_to "Users", admin_users_path, class: 'btn btn-success'
+= link_to "Papers", admin_papers_path, class: 'btn btn-success'

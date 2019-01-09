@@ -1,4 +1,4 @@
-class PapersAddPublicDescriptionPrivateDescriptionAndTitle < ActiveRecord::Migration
+class PapersAddPublicDescriptionPrivateDescriptionAndTitle < ActiveRecord::Migration[5.2]
   def change
     change_table :papers do |t|
       t.string :title, null: false

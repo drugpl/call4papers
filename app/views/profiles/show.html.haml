@@ -1,0 +1,35 @@
+%h1 My profile
+.profile
+  %table.table
+    %tr
+      %th Avatar
+      %th Name
+      %th Email
+      %th GitHub
+      %th Twitter
+    %tr
+      %td
+        = image_tag(avatar_url(current_user, 64))
+      %td= current_user.name
+      %td= current_user.email
+      %td
+        - if current_user.connected_with_github?
+          = github_link(current_user.github_handle)
+        - else
+          %a.btn-sm.btn-social.btn-github{href: "/auth/github"}
+            %span.fa.fa-github
+            connect GitHub
+      %td
+        - if current_user.connected_with_twitter?
+          = twitter_link(current_user.twitter_handle)
+        - else
+          %a.btn-sm.btn-social.btn-twitter{href: "/auth/twitter"}
+            %span.fa.fa-twitter
+            connect Twitter
+.bio
+  %h2 Bio
+  - if current_user.has_bio?
+    = markdown(current_user.bio)
+  - else
+    Tell us more about yourself!
+= link_to "Edit profile and bio", edit_profile_path, class: 'btn btn-success'
