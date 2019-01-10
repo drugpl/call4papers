@@ -21,7 +21,7 @@ module ApplicationHelper
   end
 
   def twitter_avatar_url(handle)
-    "https://twitter.com/#{handle}/profile_image?size=original"
+    "https://avatars.io/#{handle}/nerdblogpl/medium"
   end
 
   def avatar_url(user, size = 64)
