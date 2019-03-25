@@ -2,7 +2,7 @@
 %html
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Call for Papers | wroclove.rb 2019
+    %title= "Call for Papers | wroclove.rb #{conference_year}"
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -41,11 +41,12 @@
     .container.container-narrow
       .masthead
         = render "main/nav"
-        %h3.muted wroclove.rb 2019 Call For Papers
+        %h3.muted= "wroclove.rb #{conference_year} Call For Papers"
         %p
           Three day, single track, community run conference in #{link_to 'Wrocław, Poland', 'https://en.wikipedia.org/wiki/Wroc%C5%82aw'} happening on
           = succeed "." do
-            %strong 22-24th March 2019
+            %strong= conference_dates
+
           = link_to 'main conference site', 'https://wrocloverb.com'
           \.
       %hr/
@@ -56,11 +57,11 @@
           Submit your proposal and impress us. Be creative!
           %br/
           And hurry up, call for papers
-          %strong ends on January 31st!
+          %strong= "ends on #{cfp_end_date}"
         = yield
         .socialmedia
           .wrapper
             .fb-like{"data-href" => "https://wrocloverb.com", "data-layout" => "button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "450"}
           .wrapper
-            %a.twitter-share-button{"data-related" => "wrocloverb", "data-text" => "wroclove.rb call for papers ends on Jan 31st 2019. Submit yours now!", "data-url" => "https://wrocloverb.com", "data-via" => "wrocloverb", href: "https://twitter.com/share"} Tweet
+            %a.twitter-share-button{"data-related" => "wrocloverb", "data-text" => "wroclove.rb call for papers ends on #{cfp_end_date}. Submit yours now!", "data-url" => "https://wrocloverb.com", "data-via" => "wrocloverb", href: "https://twitter.com/share"} Tweet
       = render "main/footer"

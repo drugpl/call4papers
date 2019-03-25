@@ -8,10 +8,12 @@
       on the number of proposals you can submit
     %li
       CFP ends on the last minute of
-      %strong January 31st 2019
+      %strong
+        = cfp_end_date
     %li
       if one of your proposals is accepted you'll be notified no later than
-      %strong February 7th
+      %strong
+        = "#{confirmation_date.strftime("%B")} #{confirmation_date.day.ordinalize}"
     %li
       we may pick your proposal sooner if it's outstanding, so
       %strong don't wait till the end!

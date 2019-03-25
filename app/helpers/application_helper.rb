@@ -36,4 +36,17 @@ module ApplicationHelper
       link_to 'Give upvote', upvote_admin_paper_path(paper), class: 'btn btn-success', method: :post
     end
   end
+
+  def conference_year
+    Rails.configuration.conference.starts.year
+  end
+
+  def conference_dates
+    "#{Rails.configuration.conference.starts.day}-#{Rails.configuration.conference.ends.day.ordinalize} #{Rails.configuration.conference.ends.strftime("%B %Y")}"
+  end
+
+  def cfp_end_date
+    cfp_ends = Rails.configuration.conference.cfp_ends
+    "#{cfp_ends.strftime("%B")} #{cfp_ends.day.ordinalize} #{cfp_ends.year}"
+  end
 end

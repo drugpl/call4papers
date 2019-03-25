@@ -10,6 +10,11 @@ module Cfp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
+    config.conference = OpenStruct.new({
+      starts: Time.parse("2020-03-20"),
+      ends: Time.parse("2020-03-22"),
+      cfp_ends: Time.parse("2020-02-07")
+    })
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
