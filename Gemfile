@@ -10,7 +10,7 @@ gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 
-gem 'devise'
+gem 'devise', ">= 4.6.0"
 gem 'simple_form'
 gem 'omniauth'
 gem 'omniauth-github'
@@ -26,7 +26,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
 gem 'mini_racer'
-gem 'bootstrap'
+gem 'bootstrap', '>= 4.3.1'
 gem 'font-awesome-rails'
 gem 'haml-rails'
 
