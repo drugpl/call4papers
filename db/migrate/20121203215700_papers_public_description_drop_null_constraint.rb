@@ -1,5 +1,5 @@
 class PapersPublicDescriptionDropNullConstraint < ActiveRecord::Migration[5.2]
   def change
-    change_column :papers, :public_description, :text, null: true
+    change_column :papers, :public_description, :text, null: true, default: ''
   end
 end

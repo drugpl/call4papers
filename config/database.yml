@@ -1,4 +1,4 @@
-default: &default
+default:
   adapter: postgresql
   encoding: utf8
   host: localhost
@@ -6,10 +6,12 @@ default: &default
   pool: 5
 #  user: cfp
 
-development:
-  <<: *default
-  database: cfp_development
+development: &development
+  adapter: sqlite3
+  database: db/cfp_development.sqlite3
+  pool: 5
+  timeout: 5000
 
 test: &test
-  <<: *default
+  <<: *development
   database: cfp_test
