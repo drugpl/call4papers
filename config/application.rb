@@ -14,7 +14,7 @@ module Cfp
       starts: Time.parse("2020-03-20"),
       ends: Time.parse("2020-03-22"),
       cfp_starts: Time.parse("2019-03-25"),
-      cfp_ends: Time.parse("2020-02-07")
+      cfp_ends: Time.parse("2020-01-31")
     })
 
     # Settings in config/environments/* take precedence over those specified here.
