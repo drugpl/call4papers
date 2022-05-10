@@ -11,10 +11,10 @@ module Cfp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
     config.conference = OpenStruct.new({
-      starts: Time.parse("2020-03-20"),
-      ends: Time.parse("2020-03-22"),
-      cfp_starts: Time.parse("2019-03-25"),
-      cfp_ends: Time.parse("2020-01-31")
+      starts: Time.parse("2022-09-16"),
+      ends: Time.parse("2022-09-18"),
+      cfp_starts: Time.parse("2022-05-10"),
+      cfp_ends: Time.parse("2022-06-15")
     })
 
     # Settings in config/environments/* take precedence over those specified here.
